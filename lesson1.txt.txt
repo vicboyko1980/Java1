@@ -1,0 +1,80 @@
+package Java1.lesson1;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        lesson1_2();
+        System.out.println(lesson1_3(3,5,10,2));
+        System.out.println(lesson1_4(15, 10));
+        lesson1_5(3);
+        lesson1_6(-8);
+        //lesson1_7();
+        lesson1_8(2020);
+
+
+    }
+
+    public static void lesson1_2 () {
+        System.out.println("\nСоздать переменные всех пройденных типов данных и инициализировать их значения:");
+        boolean b = false;
+        byte bt = 0;
+        char c = 'x';
+        short s = 103;
+        int i = 77;
+        long l = 77777L;
+        float f = 777.0f;
+        double d = 777.777;
+        System.out.println("Значение для типа boolean = " + b);
+        System.out.println("Значение для типа byte = " + bt);
+        System.out.println("Значение для типа char = [" + c + "]");
+        System.out.println("Значение для типа short = " + s);
+        System.out.println("Значение для типа int = " + i);
+        System.out.println("Значение для типа long = " + l);
+        System.out.println("Значение для типа float = " + f);
+        System.out.println("Значение для типа double = " + d);
+    }
+
+    static double  lesson1_3 (double a, double b, double c, double d) {
+        System.out.println("\nНаписать метод вычисляющий выражение a * (b + (c / d))\n и возвращающий результат:");
+        return a * (b + (c / d));
+    }
+
+    static boolean lesson1_4 (double a, double b) {
+        System.out.println("\nНаписать метод, принимающий на вход два числа и проверяющий, что их сумма лежит в пределах от 10 до 20");
+        double sum = a + b;
+        if (sum > 10 && sum < 20) return true;
+        else return false;
+    }
+
+    public static void lesson1_5 (int a) {
+        System.out.println("\nНаписать метод, которому в качестве параметра передается целое число, метод должен напечатать в консоль, \n положительное ли число передали или отрицательное.\n");
+        if (a >= 0) System.out.println("Число " + a + " положительное");
+        else System.out.println("Число " + a + " отрицательное");
+    }
+
+    public static void lesson1_6 (int a) {
+        System.out.println("\nНаписать метод, которому в качестве параметра передается целое число.\n Метод должен вернуть true, если число отрицательное. \n");
+        boolean b;
+        if (a < 0) b= true;
+        else b= false;
+        System.out.println(b);
+    }
+
+    public static void lesson1_7() {
+        System.out.println("\n Написать метод, которому в качестве параметра передается строка, обозначающая имя.\n");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(" \n Enter name: ");
+        String nam = scanner.next();
+        System.out.println("Hello " + nam);
+        scanner.close();
+    }
+
+    public static void lesson1_8 (int year){
+        System.out.println("\n Написать метод, который определяет, является ли год високосным");
+        if (!(year % 4 == 0) || ((year % 100 == 0) && !(year % 400 == 0))) System.out.println(year + " г. не високосный");
+        else System.out.println(year + " г. високосный");
+    }
+
+}
